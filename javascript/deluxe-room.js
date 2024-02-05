@@ -4,7 +4,7 @@ toggler.addEventListener("click",function(){
     document.querySelector("#sidebar").classList.toggle("collapsed");
 });
 
-// superior hotel
+// standart-room
 var form = document.getElementById("user-form-modal"),
     userRoom = document.getElementById("number"),
     userName = document.getElementById("name"),
@@ -45,7 +45,7 @@ function showData( shownData ){
           <td class="text-center align-middle">
               <div class="btn-group align-top">
               <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" 
-              onclick="editInfo(${element.Number}, '${element.Name}', '${element.startDate}', '${element.endDate}')" type="button" 
+              onclick="editInfo(${element.Number}, '${element.Name}', '${element.startDate}', '${element.endDate}', '${index}')" type="button" 
               data-bs-toggle="modal" data-bs-target="#user-form-modal">Edit</button>
               <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" onclick="deleteInfo(${index})"
               type="button"><i class="fa fa-trash"></i></button>
@@ -58,22 +58,18 @@ function showData( shownData ){
 
 }
 showData( getData )
+editInfo(1, 1, 1, 1)
 
-function editInfo(index, number, name, Sdate, Edate){
+function editInfo(number, name, Sdate, Edate, index){
+    console.log("Edit Info")
     console.log(index)
-    console.log(number)
-    console.log(name)
-    console.log(Sdate)
-    console.log(Edate)
 
     isEdit = true
-    editId = index
     userRoom.value = number
     userName.value = name
     sDate.value = Sdate
     eDate.value = Edate
-    
-    console.log(index, number, name, Sdate, Edate)
+    editId = index
 
     submitBtn.innerText = "Update"
     modalTitle.innerText = "Update The Form"
@@ -88,10 +84,11 @@ function deleteInfo(index){
 }
 
 form.addEventListener('submit', (e)=> {
+    console.log('Form submitted')
     e.preventDefault()
 
     const information = {
-      Number: userRoom.value,
+        Number: userRoom.value,
         Name: userName.value,
         startDate: sDate.value,
         endDate: eDate.value
@@ -103,6 +100,7 @@ form.addEventListener('submit', (e)=> {
     else{
         isEdit = false
         getData[editId] = information
+        console.log(editId)
     }
 
     localStorage.setItem('userProfileDeluxe', JSON.stringify(getData))
@@ -152,10 +150,14 @@ let searchByDate = () => {
   var results = [];
   
   getData.forEach(function(data) {
-    let date = data.startDate
-    if(date === search) {
+    let sdate = data.startDate
+    let edate = data.endDate
+    if(sdate === search) {
       results.push(data)
     }
+    if(edate === search) {
+        results.push(data)
+      }
   })
   
   showData(results);
