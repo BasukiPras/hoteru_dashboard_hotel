@@ -70,7 +70,10 @@ a.sidebar-link {
 a.sidebar-link:hover {
     color: #A0602E;
 }
-a.sidebar-link:active {
+a.sidebar-link .active {
+    color: #A0602E;
+}
+.sidebar-link-active {
     color: #A0602E;
 }
 .sidebar-link[data-bs-toggle="collapse"]::after {
@@ -90,7 +93,9 @@ a.sidebar-link:active {
     transform: rotate(45deg);
     transition: all .2s ease-out;
 }
-
+.sidebar-item-list {
+    margin-left: 25px;
+}
 .content {
     flex: 1;
 }
