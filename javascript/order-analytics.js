@@ -17,7 +17,7 @@ var standartRoomData = localStorage.getItem('userProfileStandart') ? JSON.parse(
     superiorRoomData = localStorage.getItem('userProfileSuperior') ? JSON.parse(localStorage.getItem('userProfileSuperior')) : []
 
 var orderData = []
-orderData.push(standartRoomData, deluxeRoomData, superiorRoomData)
+orderData.push(standartRoomData, superiorRoomData, deluxeRoomData)
 
 let currentIndex = 0
 
