@@ -18,7 +18,7 @@ const nameTextField = document.querySelector("#name-textfield"),
 
 
 const userProfileInformation = {
-    name: "Jonathan Smith",
+    name: "Jonathan",
     email: "jonathan@gmail.com",
     phone: "(097) 234-5678",
     address: "Kuvukiland, Utopia, SA"

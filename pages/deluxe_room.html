@@ -26,7 +26,7 @@
                   </a>
                </li>
                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#hotel"
+                  <a href="#" class="sidebar-link collapsed active" data-bs-toggle="collapse" data-bs-target="#hotel"
                      aria-expanded="false" aria-controls="hotel">
                   <i class="fa-regular fa-file-lines pe-2 active"></i>
                   Hotel Room
@@ -39,7 +39,7 @@
                         <a href="/hoteru_dashboard_hotel/pages/superior_room.html" class="sidebar-link">Superior Room</a>
                      </li>
                      <li class="sidebar-item sidebar-item-list">
-                        <a href="/hoteru_dashboard_hotel/pages/deluxe_room.html" class="sidebar-link sidebar-link-active">Deluxe Room</a>
+                        <a href="/hoteru_dashboard_hotel/pages/deluxe_room.html" class="sidebar-link sidebar-link-active active">Deluxe Room</a>
                      </li>
                   </ul>
                </li>
@@ -82,10 +82,19 @@
                 <h4 class="ms-3 mt-2">Deluxe Room</h4>
             </button>
             <div class="ava float">
-                <a href="profile">
-                    <img src="/hoteru_dashboard_hotel/assets/avatar.png" class="mr-3" alt="">
-                </a>
-            </div>
+               <div class="card card-navbar border-0">
+                 <div class="row">
+                   <div class="col text-center align-items-center">
+                     <p id="name-textfield2" class="text-muted mb-0 text-center align-items-center mt-2">Jonathan</p>
+                   </div>
+                   <div class="col float-end ">
+                     <a href="/hoteru_dashboard_hotel/pages/profile.html">
+                       <img src="/hoteru_dashboard_hotel/assets/avatar.png" class="mr-3" alt="">
+                     </a>
+                   </div>
+                 </div>
+               </div>
+             </div>
         </nav>
          <div class="content">
             
@@ -98,9 +107,9 @@
                            <div class="e-panel ">
                               <div class="e-table">
                                  <div class="table-responsive table-lg mt-3">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered table-striped">
                                        <thead>
-                                          <tr>
+                                          <tr class="top-table">
                                              <th>Room Number</th>
                                              <th class="max-width">Name</th>
                                              <th class="sortable">Booked Date</th>

@@ -22,7 +22,6 @@ h3 {
 
 a {
     cursor: pointer;
-    text-decoration: none;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -70,12 +69,15 @@ a.sidebar-link {
 a.sidebar-link:hover {
     color: #A0602E;
 }
-a.sidebar-link .active {
+
+a.sidebar-link.active{
     color: #A0602E;
 }
+
 .sidebar-link-active {
     color: #A0602E;
 }
+
 .sidebar-link[data-bs-toggle="collapse"]::after {
     border: solid;
     border-width: 0 .075rem .075rem 0;
@@ -107,13 +109,23 @@ a.sidebar-link .active {
     overflow: hidden;
     transition: all 0.35s ease-in-out;
 }
+.ava {
+    background-color : #F8F8F8;
+}
 .navbar .ava img {
     width: 40px;
     height: 40px;
     display: block;
     border-radius: 50%;
 }
-
+.card-navbar {
+    max-width : 2000px;
+    backdrop-filter: none;
+    background-color: #F8F8F8;
+}
+.card-navbar:hover {
+    color: #A0602E;
+}
 .card-hotel {
     position: relative;
     border-radius: 20px;
@@ -220,7 +232,10 @@ a.sidebar-link .active {
 .px-3 {
     padding-left: 1rem !important
 }
-
+.top-table {
+    background-color: #5C5A60;
+    color: white;
+}
 .table-responsive {
     display: block;
     -webkit-overflow-scrolling: touch;
@@ -468,3 +483,39 @@ form .inputField > div input{
 .modal-footer-profile .submit{
     font-size: 18px;
 }
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }

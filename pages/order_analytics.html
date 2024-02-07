@@ -45,14 +45,14 @@
                   </ul>
                </li>
                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard"
+                  <a href="#" class="sidebar-link collapsed active" data-bs-toggle="collapse" data-bs-target="#dashboard"
                      aria-expanded="false" aria-controls="dashboard">
                   <i class="fa-solid fa-cart-shopping pe-2 active"></i>
                   Orders
                   </a>
                   <ul id="dashboard" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
                      <li class="sidebar-item sidebar-item-list">
-                        <a href="/hoteru_dashboard_hotel/pages/order_analytics.html" class="sidebar-link">Order History</a>
+                        <a href="/hoteru_dashboard_hotel/pages/order_analytics.html" class="sidebar-link active">Order History</a>
                      </li>
                   </ul>
                </li>
@@ -83,157 +83,226 @@
                 <h4 class="ms-3 mt-2">Order History</h4>
             </button>
             <div class="ava float">
-                <a href="profile">
-                    <img src="/hoteru_dashboard_hotel/assets/avatar.png" class="mr-3" alt="">
-                </a>
-            </div>
+               <div class="card card-navbar border-0">
+                 <div class="row">
+                   <div class="col text-center align-items-center">
+                     <p id="name-textfield2" class="text-muted mb-0 text-center align-items-center mt-2">Jonathan</p>
+                   </div>
+                   <div class="col float-end ">
+                     <a href="/hoteru_dashboard_hotel/pages/profile.html">
+                       <img src="/hoteru_dashboard_hotel/assets/avatar.png" class="mr-3" alt="">
+                     </a>
+                   </div>
+                 </div>
+               </div>
+             </div>
         </nav>
          <div class="content">
             
             <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-            <div class="container">
-               <div class="row flex-lg-nowrap">
-                  <div class="col">
+            
+            <div class="container mt-3">
+               <div class="row">
+                  <div class="tab">
+                     <button class="tablinks" onclick="openCity(event, 'order-standart')" id="defaultOpen">Standart Room</button>
+                     <button class="tablinks" onclick="openCity(event, 'order-superior')">Superior Room</button>
+                     <button class="tablinks" onclick="openCity(event, 'order-deluxe')">Deluxe Room</button>
+                   </div>
+                   
+                   <div id="order-standart" class="tabcontent">
                      <div class="row flex-lg-nowrap">
-                        <div class="col mb-3">
-                           <div class="e-panel ">
-                              <div class="e-table">
-                                 <div class="table-responsive table-lg mt-3">
-                                    <table class="table table-bordered">
-                                       <thead>
-                                          <tr>
-                                             <th>Room Number</th>
-                                             <th class="max-width">Name</th>
-                                             <th class="sortable">Booked Date</th>
-                                          </tr>
-                                       </thead>
-                                       <tbody id="data">
-                                          <tr class="hoteldata">
-                                            <td class="text-nowrap align-middle">01</td>
-                                            <td class="text-nowrap align-middle">Adam Cotter</td>
-                                            <td class="text-nowrap align-middle"><span>09 Dec 2017 - 10 Dec 2017</span></td>
-                                          </tr>
-                                          <!--<tr>-->
-                                          <!--   <td class="text-nowrap align-middle">02</td>-->
-                                          <!--   <td class="text-nowrap align-middle">Pauline Noble</td>-->
-                                          <!--   <td class="text-nowrap align-middle"><span>26 Jan 2018 - 28 Jan 2018</span></td>-->
-                                          <!--   <td class="text-center align-middle">-->
-                                          <!--      <div class="btn-group align-top">-->
-                                          <!--         <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button" -->
-                                          <!--            data-bs-toggle="modal" data-bs-target="#user-form-modal">Edit</button>                                                   <button class="btn btn-sm btn-outline-secondary badge"style="background-color: #B6BBC4"  type="button">-->
-                                          <!--         <i class="fa fa-trash"></i></button>-->
-                                          <!--      </div>-->
-                                          <!--   </td>-->
-                                          <!--</tr>-->
-                                          <!--<tr>-->
-                                          <!--   <td class="text-nowrap align-middle">03</td>-->
-                                          <!--   <td class="text-nowrap align-middle">Sherilyn Metzel</td>-->
-                                          <!--   <td class="text-nowrap align-middle"><span>27 Jan 2018 - 29 Jan 2018</span></td>-->
-                                          <!--   <td class="text-center align-middle">-->
-                                          <!--      <div class="btn-group align-top">-->
-                                          <!--         <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button" -->
-                                          <!--            data-bs-toggle="modal" data-bs-target="#user-form-modal">Edit</button>                                                   <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button"><i class="fa fa-trash"></i></button>-->
-                                          <!--      </div>-->
-                                          <!--   </td>-->
-                                          <!--</tr>-->
-                                          <!--<tr>-->
-                                          <!--   <td class="text-nowrap align-middle">04</td>-->
-                                          <!--   <td class="text-nowrap align-middle">Terrie Boaler</td>-->
-                                          <!--   <td class="text-nowrap align-middle"><span>20 Jan 2018 - 22 Jan 2018</span></td>-->
-                                          <!--   <td class="text-center align-middle">-->
-                                          <!--      <div class="btn-group align-top">-->
-                                          <!--         <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button" -->
-                                          <!--            data-bs-toggle="modal" data-bs-target="#user-form-modal">Edit</button>                                                   <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button"><i class="fa fa-trash"></i></button>-->
-                                          <!--      </div>-->
-                                          <!--   </td>-->
-                                          <!--</tr>-->
-                                          <!--<tr>-->
-                                          <!--   <td class="text-nowrap align-middle">05</td>-->
-                                          <!--   <td class="text-nowrap align-middle">Rutter Pude</td>-->
-                                          <!--   <td class="text-nowrap align-middle"><span>13 Jan 2018 - 14 Jan 2018</span></td>-->
-                                          <!--   <td class="text-center align-middle">-->
-                                          <!--      <div class="btn-group align-top">-->
-                                          <!--         <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button" -->
-                                          <!--            data-bs-toggle="modal" data-bs-target="#user-form-modal">Edit</button>                                                   <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button"><i class="fa fa-trash"></i></button>-->
-                                          <!--      </div>-->
-                                          <!--   </td>-->
-                                          <!--</tr>-->
-                                          <!--<tr>-->
-                                          <!--   <td class="text-nowrap align-middle">06</td>-->
-                                          <!--   <td class="text-nowrap align-middle">Clifford Benjamin</td>-->
-                                          <!--   <td class="text-nowrap align-middle"><span>25 Jan 2018 - 28 Jan 2018</span></td>-->
-                                          <!--   <td class="text-center align-middle">-->
-                                          <!--      <div class="btn-group align-top">-->
-                                          <!--         <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button" -->
-                                          <!--            data-bs-toggle="modal" data-bs-target="#user-form-modal">Edit</button>                                                   -->
-                                          <!--         <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button"><i class="fa fa-trash"></i></button>-->
-                                          <!--      </div>-->
-                                          <!--   </td>-->
-                                          <!--</tr>-->
-                                          <!--<tr>-->
-                                          <!--   <td class="text-nowrap align-middle">07</td>-->
-                                          <!--   <td class="text-nowrap align-middle">Thedric Romans</td>-->
-                                          <!--   <td class="text-nowrap align-middle"><span>12 Jan 2018 - 14 Jan 2018</span></td>-->
-                                          <!--   <td class="text-center align-middle">-->
-                                          <!--      <div class="btn-group align-top">-->
-                                          <!--         <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button" -->
-                                          <!--            data-bs-toggle="modal" data-bs-target="#user-form-modal">Edit</button>                                                  -->
-                                          <!--         <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button"><i class="fa fa-trash"></i></button>-->
-                                          <!--      </div>-->
-                                          <!--   </td>-->
-                                          <!--</tr>-->
-                                          <!--<tr>-->
-                                          <!--   <td class="text-nowrap align-middle">08</td>-->
-                                          <!--   <td class="text-nowrap align-middle">Adam Cotter</td>-->
-                                          <!--   <td class="text-nowrap align-middle"><span>09 Dec 2017 - 11 Dec 2018</span></td>-->
-                                          <!--   <td class="text-center align-middle">-->
-                                          <!--      <div class="btn-group align-top">-->
-                                          <!--         <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button" -->
-                                          <!--            data-bs-toggle="modal" data-bs-target="#user-form-modal">Edit</button>                                                   <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" type="button"><i class="fa fa-trash"></i></button>-->
-                                          <!--      </div>-->
-                                          <!--   </td>-->
-                                          <!--</tr>-->
-                                       </tbody>
-                                    </table>
-                                 </div>
-                                 <div class="d-flex justify-content-center">
-                                    <div class="pagination">
-                                       <a href="#">&laquo;</a>
-                                       <a href="#">1</a>
-                                       <a href="#" class="active">2</a>
-                                       <a href="#">3</a>
-                                       <a href="#">4</a>
-                                       <a href="#">5</a>
-                                       <a href="#">6</a>
-                                       <a href="#">&raquo;</a>
+                        <div class="col">
+                           <div class="row flex-lg-nowrap">
+                              <div class="col mb-3">
+                                 <div class="e-panel ">
+                                    <div class="e-table">
+                                       <div class="table-responsive table-lg mt-3">
+                                          <table class="table table-bordered">
+                                             <thead>
+                                                <tr class="top-table">
+                                                   <th>Room Number</th>
+                                                   <th class="max-width">Name</th>
+                                                   <th class="sortable">Booked Date</th>
+                                                </tr>
+                                             </thead>
+                                             <tbody id="standart-data" class="data">
+                                                <tr class="hoteldata">
+                                                  <td class="text-nowrap align-middle">01</td>
+                                                  <td class="text-nowrap align-middle">Adam Cotter</td>
+                                                  <td class="text-nowrap align-middle"><span>09 Dec 2017 - 10 Dec 2017</span></td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </div>
+                                       <div class="d-flex justify-content-center">
+                                          <div class="pagination">
+                                             <a href="#">&laquo;</a>
+                                             <a href="#">1</a>
+                                             <a href="#" class="active">2</a>
+                                             <a href="#">3</a>
+                                             <a href="#">4</a>
+                                             <a href="#">5</a>
+                                             <a href="#">6</a>
+                                             <a href="#">&raquo;</a>
+                                          </div>
+                                       </div>
                                     </div>
                                  </div>
                               </div>
-                           </div>
-                        </div>
-                        <div class="col-12 col-lg-3 mb-3">
-                           <div class="card mt-5">
-                              <div class="card-body">
-                                 <div>
-                                    <div class="form-group">
-                                       <label>Date from - to:</label>
+                              <div class="col-12 col-lg-3 mb-3">
+                                 <div class="card mt-5">
+                                    <div class="card-body">
                                        <div>
-                                          <input id="dates-range" class="form-control flatpickr-input date-search" placeholder="01 Dec 17 - 27 Jan 18" type="text" readonly="readonly">
+                                          <div class="form-group">
+                                             <label>Date from - to:</label>
+                                             <div>
+                                                <input class="form-control flatpickr-input date-search" placeholder="01 Dec 17 - 27 Jan 18" type="text" readonly="readonly">
+                                             </div>
+                                          </div>
+                                          <div class="form-group">
+                                             <label>Search by Name:</label>
+                                             <div><input class="form-control w-100 name-search" type="text" placeholder="Name" value=""></div>
+                                          </div>
                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                       <label>Search by Name:</label>
-                                       <div><input class="form-control w-100 name-search" type="text" placeholder="Name" value=""></div>
+                                       <hr class="my-3">
                                     </div>
                                  </div>
-                                 <hr class="my-3">
                               </div>
                            </div>
                         </div>
                      </div>
-                  </div>
+                   </div>
+                   
+                   <div id="order-superior" class="tabcontent">
+                     <div class="row flex-lg-nowrap">
+                        <div class="col">
+                           <div class="row flex-lg-nowrap">
+                              <div class="col mb-3">
+                                 <div class="e-panel ">
+                                    <div class="e-table">
+                                       <div class="table-responsive table-lg mt-3">
+                                          <table class="table table-bordered">
+                                             <thead>
+                                                <tr class="top-table">
+                                                   <th>Room Number</th>
+                                                   <th class="max-width">Name</th>
+                                                   <th class="sortable">Booked Date</th>
+                                                </tr>
+                                             </thead>
+                                             <tbody id="superior-data" class="data">
+                                                <tr class="hoteldata">
+                                                  <td class="text-nowrap align-middle">01</td>
+                                                  <td class="text-nowrap align-middle">Adam Cotter</td>
+                                                  <td class="text-nowrap align-middle"><span>09 Dec 2017 - 10 Dec 2017</span></td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </div>
+                                       <div class="d-flex justify-content-center">
+                                          <div class="pagination">
+                                             <a href="#">&laquo;</a>
+                                             <a href="#">1</a>
+                                             <a href="#" class="active">2</a>
+                                             <a href="#">3</a>
+                                             <a href="#">4</a>
+                                             <a href="#">5</a>
+                                             <a href="#">6</a>
+                                             <a href="#">&raquo;</a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-12 col-lg-3 mb-3">
+                                 <div class="card mt-5">
+                                    <div class="card-body">
+                                       <div>
+                                          <div class="form-group">
+                                             <label>Date from - to:</label>
+                                             <div>
+                                                <input class="form-control flatpickr-input date-search" placeholder="01 Dec 17 - 27 Jan 18" type="text" readonly="readonly">
+                                             </div>
+                                          </div>
+                                          <div class="form-group">
+                                             <label>Search by Name:</label>
+                                             <div><input class="form-control w-100 name-search" type="text" placeholder="Name" value=""></div>
+                                          </div>
+                                       </div>
+                                       <hr class="my-3">
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                   </div>
+      
+                   <div id="order-deluxe" class="tabcontent">
+                     <div class="row flex-lg-nowrap">
+                        <div class="col">
+                           <div class="row flex-lg-nowrap">
+                              <div class="col mb-3">
+                                 <div class="e-panel ">
+                                    <div class="e-table">
+                                       <div class="table-responsive table-lg mt-3">
+                                          <table class="table table-bordered">
+                                             <thead>
+                                                <tr class="top-table">
+                                                   <th>Room Number</th>
+                                                   <th class="max-width">Name</th>
+                                                   <th class="sortable">Booked Date</th>
+                                                </tr>
+                                             </thead>
+                                             <tbody id="deluxe-data" class="data">
+                                                <tr class="hoteldata">
+                                                  <td class="text-nowrap align-middle">01</td>
+                                                  <td class="text-nowrap align-middle">Adam Cotter</td>
+                                                  <td class="text-nowrap align-middle"><span>09 Dec 2017 - 10 Dec 2017</span></td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       </div>
+                                       <div class="d-flex justify-content-center">
+                                          <div class="pagination">
+                                             <a href="#">&laquo;</a>
+                                             <a href="#">1</a>
+                                             <a href="#" class="active">2</a>
+                                             <a href="#">3</a>
+                                             <a href="#">4</a>
+                                             <a href="#">5</a>
+                                             <a href="#">6</a>
+                                             <a href="#">&raquo;</a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-12 col-lg-3 mb-3">
+                                 <div class="card mt-5">
+                                    <div class="card-body">
+                                       <div>
+                                          <div class="form-group">
+                                             <label>Date from - to:</label>
+                                             <div>
+                                                <input class="form-control flatpickr-input date-search" placeholder="01 Dec 17 - 27 Jan 18" type="text" readonly="readonly">
+                                             </div>
+                                          </div>
+                                          <div class="form-group">
+                                             <label>Search by Name:</label>
+                                             <div><input class="form-control w-100 name-search" type="text" placeholder="Name" value=""></div>
+                                          </div>
+                                       </div>
+                                       <hr class="my-3">
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                   </div>
                </div>
             </div>
+
          </div>
          <!-- User Form Modal -->
          <div class="modal fade" role="dialog" tabindex="-1" id="user-form-modal">

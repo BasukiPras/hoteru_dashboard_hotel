@@ -4,50 +4,26 @@ toggler.addEventListener("click",function(){
     document.querySelector("#sidebar").classList.toggle("collapsed");
 });
 
+
 // superior hotel
-var form = document.getElementById("user-form-modal"),
-    userRoom = document.getElementById("number"),
-    userName = document.getElementById("name"),
-    sDate = document.getElementById("sDate"),
-    eDate = document.getElementById("eDate"),
-    submitBtn = document.querySelector(".submit"),
-    userInfo = document.getElementById("data"),
-    modal = document.getElementById("user-Form-modal"),
-    modalTitle = document.querySelector("#user-form-modal .modal-title"),
-    newUserBtn = document.querySelector(".newUser")
+var superiorDataDocument = document.querySelector("#superior-data"),
+    standartDataDocument = document.querySelector("#standart-data"),
+    deluxeDataDocument = document.querySelector("#deluxe-data")
 
+var orderDataDocument = document.querySelectorAll(".data")
     
-let standartRoomData = localStorage.getItem('userProfileStandart') ? JSON.parse(localStorage.getItem('userProfileStandart')) : []
+var standartRoomData = localStorage.getItem('userProfileStandart') ? JSON.parse(localStorage.getItem('userProfileStandart')) : [],
+    deluxeRoomData = localStorage.getItem('userProfileDeluxe') ? JSON.parse(localStorage.getItem('userProfileDeluxe')) : [],
+    superiorRoomData = localStorage.getItem('userProfileSuperior') ? JSON.parse(localStorage.getItem('userProfileSuperior')) : []
 
-let deluxeRoomData = localStorage.getItem('userProfileDeluxe') ? JSON.parse(localStorage.getItem('userProfileDeluxe')) : []
-   
-let superiorRoomData = localStorage.getItem('userProfileSuperior') ? JSON.parse(localStorage.getItem('userProfileSuperior')) : []
+var orderData = []
+orderData.push(standartRoomData, deluxeRoomData, superiorRoomData)
 
-let allData = []
-
-standartRoomData.forEach((data) => { allData.push(data) })
-deluxeRoomData.forEach((data) => { allData.push(data) })
-superiorRoomData.forEach((data) => { allData.push(data) })
-
-let isEdit = false, editId
-
-
-console.log(standartRoomData)
-console.log(deluxeRoomData)
-console.log(superiorRoomData)
-
-// newUserBtn.addEventListener('click', ()=> {
-//     submitBtn.innerText = 'Submit',
-//     modalTitle.innerText = "Fill the Form"
-//     isEdit = false
-//     // form.reset()
-// })
+let currentIndex = 0
 
 function showData( shownData ){
-
   console.log("Show Data")
   console.log(shownData)
-
   document.querySelectorAll('.hoteldata').forEach(info => info.remove())
   shownData.forEach((element, index) => {
       let createElement = `<tr class="hoteldata">
@@ -56,13 +32,10 @@ function showData( shownData ){
           <td class="text-nowrap align-middle">${element.startDate} - ${element.endDate}</td>
           </tr>`                                    
 
-      userInfo.innerHTML += createElement
+      orderDataDocument[currentIndex].innerHTML += createElement
   })
 
 }
-showData( allData    )
-
-
 
 let searchNameElement = document.querySelector(".name-search")
 
@@ -73,9 +46,8 @@ searchNameElement.oninput = () => {
 const searchByName = () =>{
   let search = searchNameElement.value.toLowerCase();
   var results = [];
-  console.log("Search")
   
-  allData.forEach(function(data) {
+  orderData[currentIndex].forEach(function(data) {
     let name = data.Name
     if(name.includes(search)) 
         results.push(data)
@@ -84,7 +56,6 @@ const searchByName = () =>{
   showData(results);
 }
 
-
 let searchDateElement = document.querySelector(".date-search")
 
 searchDateElement.oninput = () => {
@@ -92,7 +63,6 @@ searchDateElement.oninput = () => {
 }
 
 let searchByDate = () => {
-
   let search = searchDateElement.value
   var results = [];
   
@@ -107,3 +77,32 @@ let searchByDate = () => {
 }
 
 
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+
+  switch(cityName){
+    case 'order-standart': {
+      currentIndex = 0; break;
+    }
+    case 'order-superior': {
+      currentIndex = 1; break;
+    }
+    case 'order-deluxe': {
+      currentIndex = 2; break;
+    }
+  }
+  showData(orderData[currentIndex])
+
+}
+document.getElementById("defaultOpen").click();

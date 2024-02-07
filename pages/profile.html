@@ -57,14 +57,14 @@
                   </ul>
                </li>
                <li class="sidebar-item">
-                  <a href="/hoteru_dashboard_hotel/pages/profile.html" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#auth"
+                  <a href="/hoteru_dashboard_hotel/pages/profile.html" class="sidebar-link collapsed active" data-bs-toggle="collapse" data-bs-target="#auth"
                      aria-expanded="false" aria-controls="auth">
                   <i class="fa-regular fa-user pe-2 active"></i>
                   Profile
                   </a>
                   <ul id="auth" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
                      <li class="sidebar-item sidebar-item-list">
-                        <a href="/hoteru_dashboard_hotel/pages/profile.html" class="sidebar-link sidebar-link-active">Profile</a>
+                        <a href="/hoteru_dashboard_hotel/pages/profile.html" class="sidebar-link sidebar-link-active active">Profile</a>
                      </li>
                      <li class="sidebar-item sidebar-item-list">
                       <a href="#" class="sidebar-link">Log Out</a>
@@ -81,22 +81,35 @@
                 <h4 class="ms-3 mt-2">Profile</h4>
             </button>
             <div class="ava float">
-                <a href="profile">
-                    <img src="/hoteru_dashboard_hotel/assets/avatar.png" class="mr-3" alt="">
-                </a>
+              <div class="card card-navbar border-0">
+                <div class="row">
+                  <div class="col text-center align-items-center">
+                    <p id="name-textfield2" class="text-muted mb-0 text-center align-items-center mt-2">Jonathan</p>
+                  </div>
+                  <div class="col float-end ">
+                    <a href="/hoteru_dashboard_hotel/pages/profile.html">
+                      <img src="/hoteru_dashboard_hotel/assets/avatar.png" class="mr-3" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
         </nav>
           <div class="content row">
              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
              <section style="">
                <div class="container py-5">
-             
                  <div class="row">
                    <div class="col-lg-4">
                      <div class="card mb-4">
                        <div class="card-body text-center" style="height: 400px;">
-                         <img src="/hoteru_dashboard_hotel/assets/avatar.png" alt="avatar"
-                           class="rounded-circle img-fluid" style="width: 230px;">
+                        <div class="card imgholder mt-4">
+                          <label for="imgInput" class="upload">
+                              <input type="file" name="" id="imgInput">
+                              <i class="bi bi-plus-circle-dotted"></i>
+                          </label>
+                          <img src="/hoteru_dashboard_hotel/assets/avatar.png" alt="" class="img">
+                      </div>
                          <div class="d-flex justify-content-center mb-2 newUser mt-5" type="button" data-bs-toggle="modal" 
                          data-bs-target="#user-form-modal">
                            <button type="button" class="btn btn-primary" style="width: 500px;" onclick="editInfo()">Edit Profile</button>
@@ -160,17 +173,8 @@
                     </div>
     
                     <div class="modal-body-profile">
-    
-                        <form action="#" id="user-form-modal">
-    
-                            <div class="card imgholder ms-5 mt-4">
-                                <label for="imgInput" class="upload">
-                                    <input type="file" name="" id="imgInput">
-                                    <i class="bi bi-plus-circle-dotted"></i>
-                                </label>
-                                <img src="/hoteru_dashboard_hotel/assets/Profile Icon.webp" alt="" width="200" height="200" class="img">
-                            </div>
-    
+                        <div class="row">
+                          <form action="#" id="user-form-modal">
                             <div class="inputField">
                                 <div>
                                     <label for="name">Name:</label>
@@ -189,9 +193,13 @@
                                  <input type="text" name="" id="address" required>
                              </div>
                             </div>
-    
-                            <button id="form-submit" type="submit" form="user-form-modal" class="btn btn-primary submit" data-bs-dismiss="modal">Submit</button>
-                        </form>
+                        </div>
+                        
+                            <div class="row">
+                              <button id="form-submit" type="submit" form="user-form-modal" class="btn btn-primary submit btn-submit" data-bs-dismiss="modal">Submit</button>
+
+                            </div>
+                                                    </form>
                     </div>
     
                     <div class="modal-footer modal-footer-profile">
