@@ -41,6 +41,9 @@ li {
     min-width: 264px;
     transition: all 0.35s ease-in-out;
     box-shadow: 0 0 35px 0 rgba(49, 57, 66, 0.5);
+    position: sticky;
+    top: 0;
+    height: 100dvh;
 }
 
 #sidebar.collapsed {
