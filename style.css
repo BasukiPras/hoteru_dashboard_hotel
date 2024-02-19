@@ -129,6 +129,87 @@ a.sidebar-link.active{
 .card-navbar:hover {
     color: #A0602E;
 }
+
+.card {
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
+}
+
+.card-home {
+    cursor: pointer;
+}
+.l-bg-cherry {
+    background: linear-gradient(to right, #493240, #f09) !important;
+    color: #fff;
+}
+.l-bg-cherry:hover {
+    background: linear-gradient(to right, #493240, #8F0056) !important;
+    color: #fff;
+}
+
+.l-bg-blue-dark {
+    background: linear-gradient(to right, #373b44, #4286f4) !important;
+    color: #fff;
+}
+.l-bg-blue-dark:hover {
+    background: linear-gradient(to right, #373b44, #2A569C) !important;
+    color: #fff;
+}
+
+.l-bg-green-dark {
+    background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+    color: #fff;
+}
+.l-bg-green-dark:hover {
+    background: linear-gradient(to right, #0a504a, #26A356) !important;
+    color: #fff;
+}
+.l-bg-orange-dark {
+    background: linear-gradient(to right, #a86008, #ffba56) !important;
+    color: #fff;
+}
+.l-bg-orange-dark:hover {
+    background: linear-gradient(to right, #a86008, #A17637) !important;
+    color: #fff;
+}
+.card .card-statistic-3 .card-icon-large .fas, .card .card-statistic-3 .card-icon-large .far, .card .card-statistic-3 .card-icon-large .fab, .card .card-statistic-3 .card-icon-large .fal {
+    font-size: 110px;
+}
+
+.card .card-statistic-3 .card-icon {
+    text-align: center;
+    line-height: 50px;
+    margin-left: 15px;
+    color: #000;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    opacity: 0.25;
+}
+
+.l-bg-cyan {
+    background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+    color: #fff;
+}
+
+.l-bg-green {
+    background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
+    color: #fff;
+}
+
+.l-bg-orange {
+    background: linear-gradient(to right, #f9900e, #ffba56) !important;
+    color: #fff;
+}
+
+.l-bg-cyan {
+    background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+    color: #fff;
+}
+
 .card-hotel {
     position: relative;
     border-radius: 20px;
@@ -136,10 +217,39 @@ a.sidebar-link.active{
     cursor: pointer;
     border: none;
     box-shadow: 0 5px 15px rgba(47, 27, 13, 0.9);
+    text-decoration:none !important; 
 }
 .card-hotel .card-image-about img {
     object-fit: cover;
     max-height : 300px;
+}
+.card-image-about {
+    position: relative;
+    padding: 0;
+    margin: 0 !important;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 24rem;
+    max-height: 24rem;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 5px 15px rgba(47, 27, 13, 0.9);
+    text-decoration:none !important; 
+}
+.card-hotel-info {
+    text-decoration:none !important; 
+    position: absolute;
+    bottom: -40px;
+    color: #F5F7F8;
+    background: rgba(180, 180, 184, 0.3);
+    backdrop-filter: blur(15px);
+    min-height: 70px;
+    width: 100%;
+    transition: bottom .51s ease-in;
+}
+.card-hotel:hover .card-hotel-info {
+    bottom: 0px;
+    background: rgba(180, 180, 184, 0.3);
 }
 .button .button-about {
      background-color: #EEB07F ; 
