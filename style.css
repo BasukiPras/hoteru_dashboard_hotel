@@ -486,6 +486,11 @@ form .inputField > div input{
 .modal-footer-profile .submit{
     font-size: 18px;
 }
+.submit-profile {
+    width: 500px;
+    justify-content: center;
+  align-items: center;
+}
 /* Style the tab */
 .tab {
     overflow: hidden;
