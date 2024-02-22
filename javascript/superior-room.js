@@ -45,10 +45,10 @@ function showData( shownData ){
           <td class="text-nowrap align-middle">${element.startDate} - ${element.endDate}</td>
           <td class="text-center align-middle">
               <div class="btn-group align-top">
-              <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" 
+              <button class="btn btn-sm btn-outline-secondary badge"  
               onclick="editInfo(${element.Number}, '${element.Name}', '${element.startDate}', '${element.endDate}', '${index}')" type="button" 
-              data-bs-toggle="modal" data-bs-target="#user-form-modal">Edit</button>
-              <button class="btn btn-sm btn-outline-secondary badge" style="background-color: #B6BBC4" onclick="deleteInfo(${index})"
+              data-bs-toggle="modal" data-bs-target="#user-form-modal"><i class="fas fa-edit"></i></button>
+              <button class="btn btn-sm btn-outline-secondary badge"  onclick="deleteInfo(${index})"
               type="button"><i class="fa fa-trash"></i></button>
           </div>
               </td>
@@ -130,7 +130,7 @@ const searchByName = () =>{
   console.log("Search")
   
   getData.forEach(function(data) {
-    let name = data.Name
+    let name = data.Name.toLowerCase()
     if(name.includes(search)) 
         results.push(data)
   })

@@ -115,7 +115,7 @@ a.sidebar-link.active{
     transition: all 0.35s ease-in-out;
 }
 .ava {
-    background-color : #F8F8F8;
+    /* background-color : #F8F8F8; */
 }
 .navbar .ava img {
     width: 40px;
@@ -386,7 +386,11 @@ a.sidebar-link.active{
     font-size: 12px;
     line-height: 1;
     padding: .375rem .5625rem;
-    font-weight: normal
+    font-weight: normal;
+    background-color: #B6BBC4;
+}
+.badge:hover {
+    background-color: black;
 }
 
 .progress {

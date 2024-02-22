@@ -22,7 +22,6 @@ orderData.push(standartRoomData, superiorRoomData, deluxeRoomData)
 let currentIndex = 0
 
 function showData( shownData ){
-  console.log("Show Data")
   console.log(shownData)
   document.querySelectorAll('.hoteldata').forEach(info => info.remove())
   shownData.forEach((element, index) => {
@@ -35,24 +34,28 @@ function showData( shownData ){
       orderDataDocument[currentIndex].innerHTML += createElement
   })
 
+  
 }
 
-let searchNameElement = document.querySelector(".name-search")
+let searchNameElement = document.querySelectorAll(".name-search")
 
 searchNameElement.oninput = () => {
   searchByName();
 }
 
 const searchByName = () =>{
-  let search = searchNameElement.value.toLowerCase();
+  console.log("Searching Name")
+
+  let search = searchNameElement[currentIndex].value.toLowerCase();
   var results = [];
   
   orderData[currentIndex].forEach(function(data) {
-    let name = data.Name
+    let name = data.Name.toLowerCase()
     if(name.includes(search)) 
         results.push(data)
   })
   
+  console.log(results)
   showData(results);
 }
 
@@ -75,8 +78,6 @@ let searchByDate = () => {
   
   showData(results);
 }
-
-
 
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;

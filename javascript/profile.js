@@ -1,8 +1,11 @@
+try{
+
 const toggler = document.querySelector(".btn");
 
 toggler.addEventListener("click",function(){
     document.querySelector("#sidebar").classList.toggle("collapsed");
 });
+
 
 const form = document.querySelector('form'),
     nameFormInput = document.querySelector("form #name"),
@@ -27,17 +30,20 @@ const userProfileInformation = {
 let userProfileData = localStorage.getItem('userProfileData') ? JSON.parse(localStorage.getItem('userProfileData')) : [userProfileInformation]
 
 function editInfo(){
-    nameFormInput.value = userProfileData[0].name 
-    emailFormInput.value = userProfileData[0].email 
-    phoneFormInput.value = userProfileData[0].phone 
-    addressFormInput.value = userProfileData[0].address 
+    nameFormInput.value = userProfileData.name 
+    emailFormInput.value = userProfileData.email 
+    phoneFormInput.value = userProfileData.phone 
+    addressFormInput.value = userProfileData.address 
+
 }
 
 function showInfo( ){
-    nameTextField.innerHTML = userProfileData[0].name 
-    emailTextField.innerHTML = userProfileData[0].email 
-    phoneTextField.innerHTML = userProfileData[0].phone 
-    addressTextField.innerHTML = userProfileData[0].address 
+    nameTextField.innerHTML = userProfileData.name 
+    emailTextField.innerHTML = userProfileData.email 
+    phoneTextField.innerHTML = userProfileData.phone 
+    addressTextField.innerHTML = userProfileData.address 
+
+    updateHeaderProfileUI();
 }
 
 formSubmitButton.addEventListener('click', () => {
@@ -49,10 +55,50 @@ formSubmitButton.addEventListener('click', () => {
         address: addressFormInput.value
     }
     console.log(information)
-    userProfileData[0] = information 
+    userProfileData = information 
 
+    localStorage.setItem('userProfileData', JSON.stringify(information) )
     showInfo()
 })
 
+function updateHeaderProfileUI(){
+    const userProfileNameElement = document.getElementById("name-textfield2")
+    userProfileNameElement.innerHTML = userProfileData.name
+}
+
+updateHeaderProfileUI()
 
 showInfo()
+
+
+} catch(err){
+    console.log(err)
+    
+
+    let userProfileData = localStorage.getItem('userProfileData') ? JSON.parse(localStorage.getItem('userProfileData')) : [userProfileInformation]
+
+    function updateHeaderProfileUI(){
+        const userProfileNameElement = document.getElementById("name-textfield2")
+        userProfileNameElement.innerHTML = userProfileData.name
+    }
+    
+    updateHeaderProfileUI()
+    
+    showInfo()
+    
+}
+
+function readURL(input) 
+{
+    document.getElementById("imgInput").style.display = "block";
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            document.getElementById('imgInput').src =  e.target.result;
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}

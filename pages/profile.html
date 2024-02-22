@@ -84,7 +84,7 @@
               <div class="card card-navbar border-0">
                 <div class="row">
                   <div class="col text-center align-items-center">
-                    <p id="name-textfield1" class="text-muted mb-0 text-center align-items-center mt-2" >Jonathan</p>
+                    <p id="name-textfield2" class="text-muted mb-0 text-center align-items-center mt-2" >Jonathan</p>
                   </div>
                   <div class="col float-end ">
                     <a href="/hoteru_dashboard_hotel/pages/profile.html">
@@ -103,12 +103,12 @@
                    <div class="col-lg-4">
                      <div class="card mb-4">
                        <div class="card-body text-center" style="height: 400px;">
-                        <div class="card imgholder mt-4">
+                        <div class="card imgholder imgarea mt-4">
                           <label for="imgInput" class="upload">
-                              <input type="file" name="" id="imgInput">
+                              <input type="file" name="" id="imgInput" onchange="readURL(this);">
                               <i class="bi bi-plus-circle-dotted"></i>
                           </label>
-                          <img src="/hoteru_dashboard_hotel/assets/avatar.png" alt="" class="img">
+                          <img src="/hoteru_dashboard_hotel/assets/avatar.png" alt="" class="imgarea">
                       </div>
                          <div class="d-flex justify-content-center mb-2 newUser mt-5" type="button" data-bs-toggle="modal" 
                          data-bs-target="#user-form-modal">
