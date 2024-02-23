@@ -392,6 +392,10 @@ a.sidebar-link.active{
 .badge:hover {
     background-color: black;
 }
+.badge-trash:hover {
+    color: red;
+    background-color: white;
+}
 
 .progress {
    border-radius: 3px;

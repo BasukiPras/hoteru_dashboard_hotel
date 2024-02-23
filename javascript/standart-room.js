@@ -47,7 +47,7 @@ function showData( shownData ){
               <button class="btn btn-sm btn-outline-secondary badge"  
               onclick="editInfo(${element.Number}, '${element.Name}', '${element.startDate}', '${element.endDate}', '${index}')" type="button" 
               data-bs-toggle="modal" data-bs-target="#user-form-modal"><i class="fas fa-edit"></i></button>
-              <button class="btn btn-sm btn-outline-secondary badge" onclick="deleteInfo(${index})"
+              <button class="btn btn-sm btn-outline-secondary badge-trash" onclick="deleteInfo(${index})"
               type="button"><i class="fa fa-trash"></i></button>
           </div>
               </td>
