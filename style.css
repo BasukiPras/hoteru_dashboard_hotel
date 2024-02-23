@@ -382,28 +382,30 @@ a.sidebar-link.active{
 }
 
 .badge {
+    border-radius: 0;
     font-size: 12px;
     line-height: 1;
     padding: .375rem .5625rem;
     font-weight: normal;
-    background-color: #404040;
+    background-color: #008700;
     color: white;
 }
 .badge:hover {
-    color: #B8B8B8;
-    background-color: #404040;
+    color: white;
+    background-color: #006300;
 }
 .badge-trash {
-    color: #FF004D;
-    background-color: white;
+    border-radius: 0;
+    color: white;
+    background-color: #FF004D;
     font-size: 12px;
     line-height: 1;
     padding: .375rem .5625rem;
     font-weight: normal;
 }
 .badge-trash:hover {
-    color: #9C002F;
-    background-color: white;
+    color: white;
+    background-color: #9C002F;
 }
 .progress {
    border-radius: 3px;
