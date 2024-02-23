@@ -11,11 +11,7 @@ var userProfileData = localStorage.getItem("userProfileData")
   : userProfileInformation;
 
 try {
-  const toggler = document.querySelector(".btn");
-
-  toggler.addEventListener("click", function () {
-    document.querySelector("#sidebar").classList.toggle("collapsed");
-  });
+  
 
   const form = document.querySelector("form"),
     nameFormInput = document.querySelector("form #name"),
