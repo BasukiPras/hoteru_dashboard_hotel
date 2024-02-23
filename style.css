@@ -387,16 +387,21 @@ a.sidebar-link.active{
     line-height: 1;
     padding: .375rem .5625rem;
     font-weight: normal;
-    background-color: #B6BBC4;
+    background-color: #404040;
+    color: white;
 }
 .badge:hover {
-    background-color: black;
+    color: #B8B8B8;
+    background-color: #404040;
 }
-.badge-trash:hover {
-    color: red;
+.badge-trash {
+    color: #FF004D;
     background-color: white;
 }
-
+.badge-trash:hover {
+    color: #9C002F;
+    background-color: white;
+}
 .progress {
    border-radius: 3px;
    height: 8px;
