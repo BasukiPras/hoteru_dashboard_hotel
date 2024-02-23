@@ -1,3 +1,9 @@
+const toggler = document.querySelector(".btn");
+
+  toggler.addEventListener("click", function () {
+    document.querySelector("#sidebar").classList.toggle("collapsed");
+  });
+  
 const userProfileInformation = {
   picture: "/hoteru_dashboard_hotel/assets/avatar.png",
   name: "Jonathan",
