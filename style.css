@@ -397,6 +397,11 @@ a.sidebar-link.active{
 .badge-trash {
     color: #FF004D;
     background-color: white;
+    border-radius: 0;
+    font-size: 12px;
+    line-height: 1;
+    padding: .375rem .5625rem;
+    font-weight: normal;
 }
 .badge-trash:hover {
     color: #9C002F;
